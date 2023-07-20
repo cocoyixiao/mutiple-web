@@ -2,10 +2,8 @@
 
 <template lang="pug">
 .top
-  h1 Discovery
-  ul
-    li(v-for="item in nav" :key="item.id")
-      a(:href="item.url") {{ item.text }}
+  h1 Weixin
+  p Welcome ~
 
 </template>
 <script setup lang="ts">

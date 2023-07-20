@@ -1,5 +1,29 @@
-import { resolve } from 'path'
+import { resolve, join, relative, basename } from 'path'
+const fs = require('fs')
 import { fileURLToPath, URL } from 'node:url'
+
+var filePath = resolve('./html');
+const getAllFile= (dir:any) =>{
+  let res:any = {}
+  const traverse = (dir:any) =>{
+    fs.readdirSync(dir).forEach((file:any)=>{
+      const pathname = join(dir, file)
+      if(fs.statSync(pathname).isDirectory()){
+        traverse(pathname)
+      } else{
+        const key = basename(pathname, '.html');
+        // const relativePath = relative(__dirname, pathname)
+        // res.push(relativePath)
+        // res.push(pathname)
+        res[key] = pathname
+      }
+    })
+  }
+  traverse(dir)
+  return res;
+}
+// const files = getAllFile(filePath)
+// console.log(files)
 
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
@@ -28,10 +52,7 @@ export default defineConfig({
   },
   build: {
     rollupOptions: {
-      input: {
-        about: resolve(__dirname, './html/about.html'),
-        discovery: resolve(__dirname, './html/discovery.html')
-      }
+      input: getAllFile(filePath)
     }
   }
 })

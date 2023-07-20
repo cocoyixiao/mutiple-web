@@ -19,12 +19,12 @@ const nav = ref([
   {
     id: 2,
     text: 'Discovery',
-    url: '/html/discovery'
+    url: '/html/discovery.html'
   },
   {
     id: 3,
     text: 'About',
-    url: '/html/About'
+    url: '/html/about.html'
   }
 ])
 </script>
