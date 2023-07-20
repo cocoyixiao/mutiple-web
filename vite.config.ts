@@ -1,3 +1,4 @@
+import { resolve } from 'path'
 import { fileURLToPath, URL } from 'node:url'
 
 import { defineConfig } from 'vite'
@@ -13,6 +14,14 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
+    }
+  },
+  build: {
+    rollupOptions: {
+      input: {
+        about: resolve(__dirname, './html/about.html'),
+        discovery: resolve(__dirname, './html/discovery.html')
+      }
     }
   }
 })
