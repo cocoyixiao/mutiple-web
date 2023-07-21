@@ -1,6 +1,8 @@
 import { resolve, join, relative, basename } from 'path'
-const fs = require('fs')
 import { fileURLToPath, URL } from 'node:url'
+const fs = require('fs')
+const createHtml = require('./config/pug-to-html.js')
+createHtml()
 
 var filePath = resolve('./html');
 const getAllFile= (dir:any) =>{
@@ -14,7 +16,6 @@ const getAllFile= (dir:any) =>{
         const key = basename(pathname, '.html');
         // const relativePath = relative(__dirname, pathname)
         // res.push(relativePath)
-        // res.push(pathname)
         res[key] = pathname
       }
     })
@@ -22,8 +23,6 @@ const getAllFile= (dir:any) =>{
   traverse(dir)
   return res;
 }
-// const files = getAllFile(filePath)
-// console.log(files)
 
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'

@@ -1,0 +1,21 @@
+//- Base template for all pages that
+//- need vue,vuex,vue-router,vue-i18n, axios and moment
+include ./fragment/_global-vars
+include ./fragment/_global-mixins
+doctype html
+html
+  head
+    meta(content="charset=utf-8")
+    meta(name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,viewport-fit=cover")
+    block meta
+    block script
+    block title
+      title #{ websiteTitle }
+    block libcss
+    block css
+    block headjs
+
+  body
+    block main
+    block libjs
+    block js
