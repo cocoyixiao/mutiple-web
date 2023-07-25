@@ -1,18 +1,21 @@
+$vm_base = 1920
+vw($px)
+  ($px / $vm_base) * 100vw
 $red = #f00
 $black = #000
 $white = #fff
 br(n)
-  border-radius: (n)px
+  border-radius: vw(n)
 pd(n)
-  padding (n)px
+  padding vw(n)
 mg(n)
-  margin: (n)px
+  margin: vw(n)
 mt(n)
-  margin-top: (n)px
+  margin-top: vw(n)
 mb(n)
-  margin-bottom: (n)px
+  margin-bottom: vw(n)
 f(n)
-  font-size: (n)px
+  font-size: vw(n)
 df()
   display: flex
 di()
@@ -22,6 +25,6 @@ flexRow()
 flexBt()
   justify-content space-between
 mr(n)
-  margin-right (n)px
+  margin-right vw(n)
 lh(n)
-  line-height: (n)px
+  line-height: vw(n)

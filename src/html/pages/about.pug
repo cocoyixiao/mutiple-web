@@ -1,12 +1,10 @@
 extends ../_base
 block meta
-  +favicon()
-  +analytics()
   meta(name="keyword" content="About us ~")
   meta(name="description" content="We are a group of free developers")
 block title
   title About us  
 block main
-  #app
+  #root
 block js
   script(type="module" src="/src/pages/about/main.ts")

@@ -37,6 +37,7 @@
     "prettier": "^2.8.8",
     "pug": "^3.0.2",
     "pug-plain-loader": "^1.1.0",
+    "rollup-plugin-visualizer": "^5.9.2",
     "typescript": "~5.0.4",
     "vite": "^4.3.9",
     "vite-plugin-pug": "^0.3.2",
