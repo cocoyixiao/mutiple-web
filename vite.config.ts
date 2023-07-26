@@ -1,4 +1,4 @@
-import { resolve, join, relative, basename } from 'path'
+import { resolve, join, basename } from 'path'
 import { fileURLToPath, URL } from 'node:url'
 const fs = require('fs')
 const createHtml = require('./config/pug-to-html.js')
